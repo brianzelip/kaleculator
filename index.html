@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdn.shoelace.style/1.0.0-beta22/shoelace.css">
+    <title>kaleculator</title>
+  </head>
+
+  <body class="bg-secondary">
+
+    <div class="pad-lg">
+      <form action="">
+        <fieldset>
+          <legend>Kaleculator &middot;&middot;&middot; for calculating batches of kale to buy</legend>
+          <div class="input-group">
+            <input id="inputField" type="number">
+            <button id="submitButton" type="button" class="button">Submit</button>
+          </div>
+        </fieldset>
+      </form>
+    </div>
+
+    <div>
+      <span id="output"></span>
+    </div>
+
+    <script>
+      const userInput = document.getElementById('inputField');
+      const submit = document.getElementById('submitButton');
+      const appOutput = document.getElementById('output');
+
+      const k = 1125;
+
+      submit.addEventListener('click', () => {
+        appOutput.innerHTML = '';
+        if ( true ) {
+          appOutput.innerHTML = `Please enter an integer!`;
+        }
+        console.log('the button was clicked!')
+      }, false );
+
+      // userInput.addEventListener('input', () => {
+      //     console.log(`userInput.value: ${userInput.value}, which is a ${typeof(userInput.value)}`)
+      //     if ( userInput.value.search(/([^0-9])/) >= 0 ) {
+      //       appOutput.innerHTML = `Please enter an integer`;
+      //     };
+      //     // appOutput.innerHTML = userInput.value
+      //   }, false );
+
+      let totalWholeKaleNeededPerRunInGrams = k * 1;
+    </script>
+
+  </body>
+
+</html>
