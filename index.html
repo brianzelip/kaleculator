@@ -16,8 +16,8 @@
         <fieldset>
           <legend>Kaleculator &middot;&middot;&middot; for calculating batches of kale to buy</legend>
           <div class="input-group">
-            <input id="inputField" type="number">
-            <button id="submitButton" type="button" class="button">Submit</button>
+            <input id="inputField" type="number" placeholder="Enter an integer">
+            <button id="submitButton" type="submit" class="button">Submit</button>
           </div>
         </fieldset>
       </form>
@@ -28,18 +28,23 @@
     </div>
 
     <script>
-      const userInput = document.getElementById('inputField');
+      let userInput = document.getElementById('inputField');
+      userInput.value = '';
       const submit = document.getElementById('submitButton');
       const appOutput = document.getElementById('output');
 
       const k = 1125;
 
-      submit.addEventListener('click', () => {
-        appOutput.innerHTML = '';
-        if ( true ) {
+      submit.addEventListener('click', (e) => {
+        e.preventDefault();
+        console.log('the button was clicked!');
+        console.log('userInput.value = ', userInput.value);
+        if ( userInput.value !== '' ) {
+          appOutput.innerHTML = `${k * userInput.value} :: ${(k * userInput.value)/454} :: ${(k * userInput.value) * 454}`;
+        } else {
           appOutput.innerHTML = `Please enter an integer!`;
         }
-        console.log('the button was clicked!')
+        userInput.value = '';
       }, false );
 
       // userInput.addEventListener('input', () => {
