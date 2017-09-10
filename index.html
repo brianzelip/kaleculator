@@ -20,109 +20,6 @@
       .h5 { font-size: .875rem }
       .h6 { font-size: .75rem }
 
-      fieldset {
-        border: 1px solid #ddd;
-        border-radius: .25rem;
-        padding: 1.75rem;
-      }
-
-      input[type="number"] {
-        border: 1px solid #ddd;
-        border-radius: .25rem;
-        -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.05);
-        box-shadow: inset 0 1px 1px rgba(0,0,0,.05);
-        background-color: #fff;
-
-      }
-
-      /* *::placeholder { color: #aaa; }
-
-      input[type="color"], input[type="date"], input[type="datetime-local"], input[type="email"], input[type="month"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="time"], input[type="url"], input[type="week"], select, textarea {
-        width: 100%;
-        border: 1px solid #ddd;
-        border-radius: .25rem;
-        -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.05);
-        box-shadow: inset 0 1px 1px rgba(0,0,0,.05);
-        background-color: #fff;
-        height: 2.25rem;
-        line-height: 2.25rem;
-        vertical-align: middle;
-        display: block;
-        padding-left: .5rem;
-        padding-right: .5rem;
-        margin: 0;
-        -webkit-transition: border-color .1s,background-color .1s,color .1s;
-        transition: border-color .1s,background-color .1s,color .1s;
-        white-space: nowrap;
-        -moz-appearance: none;
-        -webkit-appearance: none;
-      }
-
-      input { overflow: visible; }
-
-      fieldset {
-        border: 1px solid #ddd;
-        border-radius: .25rem;
-        padding: 1.5rem 2rem;
-        margin-bottom: 1.5rem;
-      }
-
-      input[type="color"]:focus, input[type="date"]:focus, input[type="datetime-local"]:focus, input[type="email"]:focus, input[type="month"]:focus, input[type="number"]:focus, input[type="password"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="text"]:focus, input[type="time"]:focus, input[type="url"]:focus, input[type="week"]:focus, select:focus, textarea:focus {
-        outline: none;
-        border-color: #0074d9;
-      }
-
-      .input-group {
-        width: 100%;
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-      }
-
-      .input-group > .button:first-child, .input-group > .dropdown:first-child .button, .input-group > .dropdown:first-child button, .input-group > .file-button:first-child label, .input-group > .input-icon:first-child input, .input-group > .input-icon:first-child select, .input-group > button:first-child, .input-group > input:first-child {
-        border-top-left-radius: .25rem;
-        border-bottom-left-radius: .25rem;
-        border-top-right-radius: 0;
-        border-bottom-right-radius: 0;
-      }
-
-      .input-group > .button:last-child, .input-group > .dropdown:last-child .button, .input-group > .dropdown:last-child button, .input-group > .file-button:last-child label, .input-group > .input-icon:last-child input, .input-group > .input-icon:last-child select, .input-group > button:last-child, .input-group > input:last-child {
-        border-top-right-radius: .25rem;
-        border-bottom-right-radius: .25rem;
-        border-bottom-left-radius: 0;
-        border-top-left-radius: 0;
-      }
-
-      .button, button {
-        font-family: inherit;
-        font-size: 1rem;
-        font-weight: inherit;
-        text-align: center;
-        text-decoration: none;
-        color: #fff;
-        background-color: #0074d9;
-        border-radius: .25rem;
-        border: 1px solid #0074d9;
-        border-top-color: rgb(0, 116, 217);
-        border-bottom-color: rgb(0, 116, 217);
-        border-top-color: #1982dd;
-        border-bottom-color: #0068c3;
-        height: 2.25rem;
-        line-height: calc(2.25rem - 2px);
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-        vertical-align: middle;
-        white-space: nowrap;
-        padding: 0 .75em;
-        cursor: pointer;
-        display: inline-block;
-        -webkit-transition: all .1s;
-        transition: all .1s;
-      } */
-
-
       .col-1 {
       width:8.33333%
       }
@@ -427,7 +324,24 @@
         </div>
         <fieldset>
           <div class="input-group">
-            <input id="inputField" type="number" placeholder="Enter an integer">
+            <!-- <input id="inputField" type="number" placeholder="Enter an integer"> -->
+            <select id="inputField">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+              <option value="11">11</option>
+              <option value="12">12</option>
+              <option value="13">13</option>
+              <option value="14">14</option>
+              <option value="15">15</option>
+            </select>
             <button id="submitButton" type="submit" class="button">Submit</button>
           </div>
         </fieldset>
@@ -470,6 +384,7 @@
         e.preventDefault();
         console.log('the button was clicked!');
         console.log('userInput.value = ', userInput.value);
+        console.log('typeof userInput.value = ', typeof userInput.value);
         if ( userInput.value !== '' ) {
           outputDiv.classList.remove('hide');
           outputGrams.innerHTML = getGrams(k, userInput.value);
