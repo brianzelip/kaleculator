@@ -9,26 +9,38 @@
     <title>kaleculator</title>
     <style>
       * { box-sizing: border-box; }
+      html,
+      body,
+      .vh100 { min-height: 100vh; }
+      .h0,body,h1,h2,h3,h4,h5,h6 {
+        font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+      }
       .hide { display: none; }
       fieldset {
         border: 1px solid #111;
         border-radius: 4px;
         padding: 1rem;
       }
+      .thin { font-weight: 300; }
       @media(min-width: 40em) {
         .sm-flex-row { flex-direction: row; }
       }
     </style>
   </head>
 
-  <body class="bg-silver">
+  <body class="bg-silver flex flex-column">
 
-    <div class="p2">
+    <header class="px2">
+      <h1 class="center">Kaleculator</h1>
+      <h2 class="mt2 center thin">calculate the amount of kale to buy in pounds and grams</h2>
+    </header>
+
+    <main class="p2 flex-grow">
 
       <Kaleculator>
-        <div class="p2 col-8 sm-col-12 md-col-10 mx-auto border rounded">
+        <div class="p2 col-8 sm-col-12 md-col-10 lg-col-8 mx-auto border rounded">
           <div class="flex flex-center flex-column sm-flex-row">
-            <select name="starting-point" id="starting-point" class="col-12 sm-col-6">
+            <select name="starting-point" id="starting-point" class="col-6">
               <option value="0" selected>0</option>
               <option value="1">1</option>
               <option value="2">2</option>
@@ -59,11 +71,15 @@
         </div>
       </Kaleculator>
 
-    </div>
+    </main>
 
-    <div class="p4">
-      <div id="output-display"></div>
-    </div>
+    <footer class="">
+      <div class="col-6 sm-col-4 md-col-3 lg-col-2 mx-auto">
+        <a href="http://outliersnacks.com">
+          <img src="OSlogo.png" alt="Outlier Snacks logo" title="Outlier Snacks logo">
+        </a>
+      </div>
+    </footer>
 
     <script>
       const userInput = document.getElementById('starting-point');
