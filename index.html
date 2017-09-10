@@ -24,15 +24,17 @@
       .thin { font-weight: 300; }
       @media(min-width: 40em) {
         .sm-flex-row { flex-direction: row; }
+        .sm-mt2 { margin-top: 1rem; }
       }
+      .transparent { color: transparent; }
     </style>
   </head>
 
   <body class="bg-silver flex flex-column">
 
-    <header class="px2">
-      <h1 class="center">Kaleculator</h1>
-      <h2 class="mt2 center thin">calculate the amount of kale to buy in pounds and grams</h2>
+    <header class="px2 center">
+      <h1 class="mt0 sm-mt2">Kaleculator</h1>
+      <h2 class="mt2 thin">calculate the amount of kale to buy in pounds and grams</h2>
     </header>
 
     <main class="p2 flex-grow">
@@ -40,31 +42,31 @@
       <Kaleculator>
         <div class="p2 col-8 sm-col-12 md-col-10 lg-col-8 mx-auto border rounded">
           <div class="flex flex-center flex-column sm-flex-row">
-            <select name="starting-point" id="starting-point" class="col-6">
+            <select name="starting-point" id="starting-point" class="col-10 sm-col-6">
               <option value="0" selected>0</option>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-              <option value="6">6</option>
-              <option value="7">7</option>
-              <option value="8">8</option>
-              <option value="9">9</option>
-              <option value="10">10</option>
-              <option value="11">11</option>
-              <option value="12">12</option>
-              <option value="13">13</option>
-              <option value="14">14</option>
-              <option value="15">15</option>
+              <option value="1">1 batch</option>
+              <option value="2">2 batches</option>
+              <option value="3">3 batches</option>
+              <option value="4">4 batches</option>
+              <option value="5">5 batches</option>
+              <option value="6">6 batches</option>
+              <option value="7">7 batches</option>
+              <option value="8">8 batches</option>
+              <option value="9">9 batches</option>
+              <option value="10">10 batches</option>
+              <option value="11">11 batches</option>
+              <option value="12">12 batches</option>
+              <option value="13">13 batches</option>
+              <option value="14">14 batches</option>
+              <option value="15">15 batches</option>
             </select>
 
             <div class="col-12 sm-col-3 center">
-              <span id="output-pounds" class="h1"></span><span>lbs</span>
+              <span id="output-pounds" class="h1"></span><span class="unit transparent">lbs</span>
             </div>
 
             <div class="col-12 sm-col-3 center">
-              <span id="output-grams" class="h1"></span><span>g</span>
+              <span id="output-grams" class="h1"></span><span class="unit transparent">g</span>
             </div>
 
           </div>
@@ -83,9 +85,9 @@
 
     <script>
       const userInput = document.getElementById('starting-point');
-      const output = document.getElementById('output-display');
       const outputGrams = document.getElementById('output-grams');
       const outputPounds = document.getElementById('output-pounds');
+      const units = document.querySelectorAll('.unit');
       
       const k = 1125;
       const getGrams = (constant, input) =>
@@ -100,6 +102,7 @@
         }`;
 
       userInput.addEventListener('change', (e) => {
+        units.forEach( (unit) => unit.classList.remove('transparent') );
         outputGrams.innerHTML = getGrams(k, userInput.value);
         outputPounds.innerHTML = getPounds(k, userInput.value);
       }, false)
