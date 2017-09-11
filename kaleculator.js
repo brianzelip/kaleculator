@@ -4,7 +4,7 @@ const outputGrams = document.getElementById("output-grams");
 const outputPounds = document.getElementById("output-pounds");
 const units = document.querySelectorAll(".unit");
 
-// define the kale math constants
+// define the kaleculation constants
 const k = 1125;
 const getGrams = (constant, input) =>
   `${Number(constant * input).toLocaleString()}`;
@@ -16,7 +16,7 @@ const getPounds = (constant, input) =>
 // show kale calculations when user selects a number of kale batches
 userInput.addEventListener(
   "change",
-  e => {
+  () => {
     // units.forEach( (unit) => unit.classList.remove('transparent') );
     // (have to use Array.from() since there is no NodeList.forEach() in Edge)
     Array.from(units, unit => unit.classList.remove("transparent"));
