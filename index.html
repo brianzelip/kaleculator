@@ -1,68 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <link rel="stylesheet" href="kaleculator.css">
-    <title>kaleculator</title>
-    <meta name="description" content="Calculate the amount of kale to buy in pounds and grams.">
-    <meta name="author" content="Brian Zelip">
-    <meta name="keywords" content="kale, calculator, 'Outlier Snacks'">
-  </head>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <link rel="stylesheet" href="kaleculator.css">
+  <title>kaleculator</title>
+  <meta name="description" content="Calculate the amount of kale to buy in pounds and grams.">
+  <meta name="author" content="Brian Zelip">
+  <meta name="keywords" content="kale, calculator, 'Outlier Snacks'">
+</head>
 
-  <body class="bg-silver flex flex-column">
+<body class="bg-silver flex flex-column">
 
-    <header class="px2 center">
-      <h1 class="mt0 sm-mt2">Kaleculator</h1>
-      <h2 class="mt2 thin">calculate the amount of kale to buy in pounds and grams</h2>
-    </header>
+  <header class="px2 center">
+    <h1 class="mt1 sm-mt2">Kaleculator</h1>
+    <h2 class="mt2 thin">calculate the amount of kale to buy in pounds and grams</h2>
+  </header>
 
-    <main class="p2 flex-grow">
-      <Kaleculator>
-        <div class="p2 col-8 sm-col-12 md-col-10 lg-col-8 mx-auto border rounded">
-          <div class="flex flex-center flex-column sm-flex-row">
-            <select name="kale-batches" id="kale-batches" class="col-10 sm-col-6 mb1 sm-mb0">
-              <option value="0" selected>0</option>
-              <option value="1">1 batch</option>
-              <option value="2">2 batches</option>
-              <option value="3">3 batches</option>
-              <option value="4">4 batches</option>
-              <option value="5">5 batches</option>
-              <option value="6">6 batches</option>
-              <option value="7">7 batches</option>
-              <option value="8">8 batches</option>
-              <option value="9">9 batches</option>
-              <option value="10">10 batches</option>
-              <option value="11">11 batches</option>
-              <option value="12">12 batches</option>
-              <option value="13">13 batches</option>
-              <option value="14">14 batches</option>
-              <option value="15">15 batches</option>
-            </select>
+  <main class="p2 flex-grow">
+    <Kaleculator>
+      <div class="p2 col-8 sm-col-12 md-col-10 lg-col-8 mx-auto border rounded">
+        <div class="flex flex-center flex-column sm-flex-row">
+          <form class="col-12 sm-col-6 mb1 sm-mb0 flex flex-column sm-flex-row">
+            <input type="number" id="number-input" class="fit sm-flex-grow mr0 ml0 mb1 sm-mb0 sm-rounded-left">
+            <button type="submit" id="number-submit" class="btn btn-primary regular not-rounded sm-rounded-right">Submit</button>
+          </form>
 
-            <div class="col-12 sm-col-3 center">
-              <span id="output-pounds" class="h1"></span><span class="unit transparent">lbs</span>
-            </div>
-
-            <div class="col-12 sm-col-3 center">
-              <span id="output-grams" class="h1"></span><span class="unit transparent">g</span>
-            </div>
-
+          <div class="col-12 sm-col-3 center">
+            <span id="output-pounds" class="h1"></span><span class="unit transparent">lbs</span>
           </div>
+
+          <div class="col-12 sm-col-3 center">
+            <span id="output-grams" class="h1"></span><span class="unit transparent">g</span>
+          </div>
+
         </div>
-      </Kaleculator>
-    </main>
+      </div>
+    </Kaleculator>
+  </main>
 
-    <footer class="col-6 sm-col-4 md-col-3 lg-col-2 mx-auto">
-      <a href="http://outliersnacks.com">
-        <img src="OSlogo.png" alt="Outlier Snacks logo" title="Outlier Snacks logo">
-      </a>
-    </footer>
+  <footer class="col-6 sm-col-4 md-col-3 lg-col-2 mx-auto">
+    <a href="http://outliersnacks.com">
+          <img src="OSlogo.png" alt="Outlier Snacks logo" title="Outlier Snacks logo">
+        </a>
+  </footer>
 
-    <script src="kaleculator.js"></script>
+  <script src="kaleculator.js"></script>
 
-  </body>
+</body>
 
 </html>
