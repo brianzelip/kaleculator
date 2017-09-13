@@ -1138,6 +1138,7 @@ h6 {
 }
 
 input[type='number'] {
+  height: auto;
   border: 1px solid rgba(0, 0, 0, 0.05);
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
@@ -1153,6 +1154,8 @@ button[type='submit'] {
   background-color: rgb(101, 168, 41);
 }
 
+.width-auto { width: auto; }
+
 .thin {
   font-weight: 300;
 }
@@ -1162,6 +1165,9 @@ button[type='submit'] {
 }
 
 @media (min-width: 40em) {
+  .sm-h2 {
+    font-size: 1.5rem;
+  }
   .sm-mt2 {
     margin-top: 1rem;
   }
