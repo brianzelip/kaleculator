@@ -28,36 +28,3 @@ submitBtn.addEventListener(
   },
   false
 );
-
-// update input placeholder text responsively
-// this resource conscious resize callback via https://developer.mozilla.org/en-US/docs/Web/Events/resize#requestAnimationFrame_customEvent
-// (function () {
-//   getPlaceholder();
-//   var throttle = function (type, name, obj) {
-//     obj = obj || window;
-//     var running = false;
-//     var func = function () {
-//       if (running) { return; }
-//       running = true;
-//       requestAnimationFrame(function () {
-//         obj.dispatchEvent(new CustomEvent(name));
-//         running = false;
-//       });
-//     };
-//     obj.addEventListener(type, func);
-//   };
-
-//   /* init - you can init any event */
-//   throttle('resize', 'optimizedResize');
-// })();
-
-// // output responsive placeholder
-// function getPlaceholder() {
-//   console.log('document.body.clientWidth', document.body.clientWidth);
-//   document.body.clientWidth >= 640
-//     ? userInput.setAttribute('placeholder', 'Enter number of batches')
-//     : userInput.setAttribute('placeholder', 'Number of batches');
-// }
-
-// // handle event
-// window.addEventListener('optimizedResize', getPlaceholder);
