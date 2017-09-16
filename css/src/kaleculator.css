@@ -1,0 +1,116 @@
+/*!
+  [Kaleculator](http://zelip.me/kaleculator)
+
+  by @bzelip
+  and [Basscss](http://basscss.com/)
+
+*/
+
+@import "./basscss@7.1.1.css";
+
+/* Kaleculator extras on top of Basscss */
+
+/*!
+Box Sizing via http://tachyons.io/docs/layout/box-sizing/
+*/
+html,
+body,
+div,
+article,
+section,
+main,
+footer,
+header,
+form,
+fieldset,
+pre,
+code,
+p,
+ul,
+ol,
+li,
+dl,
+dt,
+dd,
+textarea,
+input[type="email"],
+input[type="number"],
+input[type="password"],
+input[type="tel"],
+input[type="text"],
+input[type="url"],
+.border-box {
+  box-sizing: border-box;
+}
+
+html,
+body,
+.vh100 {
+  min-height: 100vh;
+}
+
+.h0,
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+}
+
+input[type='number'] {
+  height: auto;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+  background-color: #fff;
+}
+
+input[type='number']:focus {
+  outline: none;
+  border-color: rgb(101, 168, 41);
+}
+
+button[type='submit'] {
+  background-color: rgb(101, 168, 41);
+}
+
+.width-auto { width: auto; }
+
+.thin {
+  font-weight: 300;
+}
+
+.transparent {
+  color: transparent;
+}
+
+@media (min-width: 40em) {
+  .sm-h2 {
+    font-size: 1.5rem;
+  }
+  .sm-mt2 {
+    margin-top: 1rem;
+  }
+  .sm-mb0 {
+    margin-bottom: 0;
+  }
+  .sm-flex-row {
+    flex-direction: row;
+  }
+  .sm-flex-grow {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1 0 auto;
+    -ms-flex: 1 0 auto;
+    flex: 1 0 auto;
+  }
+  .sm-rounded-right {
+    border-radius: 0 3px 3px 0;
+  }
+  .sm-rounded-left {
+    border-radius: 3px 0 0 3px;
+  }
+}
