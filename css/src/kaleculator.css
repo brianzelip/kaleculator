@@ -1,16 +1,15 @@
 /*!
-  [Kaleculator](http://zelip.me/kaleculator)
+  [Kaleculator.css](http://zelip.me/kaleculator)
 
-  by @bzelip
-  and [Basscss](http://basscss.com/)
+  by [Brian Zelip](http://zelip.me) and [Basscss](http://basscss.com/)
 
 */
 
 @import "./basscss@7.1.1.css";
 
-/* Kaleculator extras on top of Basscss */
+/*! Kaleculator custom styles on top of Basscss */
 
-/*!
+/*
 Box Sizing via http://tachyons.io/docs/layout/box-sizing/
 */
 html,

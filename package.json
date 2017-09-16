@@ -4,7 +4,8 @@
   "description": "Calculate the amount of kale needed in pounds and grams to make a given number of Outlier Snacks kale chip batches.",
   "main": "index.html",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "uncss": "postcss -u postcss-import autoprefixer cssnano -d css/dist/ css/src/kaleculator.css --no-map --watch"
   },
   "repository": {
     "type": "git",
