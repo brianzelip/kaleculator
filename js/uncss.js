@@ -24,42 +24,53 @@
  */
 const elements = document.getElementsByTagName('*');
 
-let classSelectors = function(htmlCollection) {
-  let uniqClasses = [];
-  Array.from(htmlCollection)
+// let classesUsedInHtml = htmlCollection => {
+//   let uniqClassSelectors = [];
+//   Array.from(htmlCollection)
+//     .filter(element => element.classList.length > 0)
+//     .map(element =>
+//       element.classList.forEach(
+//         item =>
+//           uniqClassSelectors.includes(item)
+//             ? null
+//             : uniqClassSelectors.push(item)
+//       )
+//     );
+//   return uniqClassSelectors;
+// };
+
+let classesUsedInHtml = htmlCollection => [
+  ...new Set( // get unique items and convert to array
+    [].concat(
+      ...// concat all classes' arrays
+      [...htmlCollection] // convert the collection to an array
+        .map(({ classList }) => [...classList])
+    ) // get arrays of classes
+  )
+];
+
+let classesUsedInHtml2 = htmlCollection => {
+  return Array.from(htmlCollection)
     .filter(element => element.classList.length > 0)
-    .map(element =>
-      element.classList.forEach(
-        item => (uniqClasses.includes(item) ? null : uniqClasses.push(item))
-      )
-    );
-  return uniqClasses;
+    .map(element => element.classList)
+    .reduce((accumulator, domTokenList) => {
+      return domTokenList.forEach(
+        classSelector =>
+          accumulator.includes(classSelector)
+            ? accumulator
+            : accumulator.concat(classSelector)
+      );
+    }, []);
 };
 
-let simpleSelectors = function(htmlCollection) {
-  let uniqElements = [];
-  let getBodyIndex = function(arr) {
-    arr.forEach((obj, i) => ((obj.tagName = 'BODY') ? i : null));
-  };
-  const bodyIndex = getBodyIndex(Array.from(htmlCollection));
-
-  console.log('bodyIndex', bodyIndex);
-
-  // return Array.from(htmlCollection).map(item => {
-  //   console.log('typeof item', typeof item);
-  //   return 'hello';
-  // });
-  //console.log('bodyIndex', bodyIndex);
-  return 'hello';
-
-  // .map(element =>
-  //   element.tagName.forEach(
-  //     item => (uniqElements.includes(item) ? null : uniqElements.push(item))
-  //   )
-  // );
-  // return uniqElements;
+let elementsUsedInHtml = htmlCollection => {
+  return Array.from(htmlCollection).reduce((acc, elementObj) => {
+    return acc.includes(elementObj.tagName)
+      ? acc
+      : acc.concat(elementObj.tagName);
+  }, []);
 };
 
 console.log('elements', elements);
-console.log('classSelectors(elements)', classSelectors(elements));
-console.log('simpleSelectors(elements)', simpleSelectors(elements));
+console.log('classesUsedInHtml(elements)', classesUsedInHtml(elements));
+console.log('elementsUsedInHtml(elements)', elementsUsedInHtml(elements));
